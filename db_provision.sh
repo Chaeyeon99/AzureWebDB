@@ -1,7 +1,5 @@
 #!/bin/bash
-#provision DBBox Version 0.0.0
-# Edited by Jessica Rankins 4/17/2017
-
+#provision db
 
 rm -f postinstall.sh
 
@@ -19,14 +17,14 @@ echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'rootpass' WITH GR
 #echo "GRANT PROXY ON ''@'' TO 'root'@'%' WITH GRANT OPTION" | mysql -u root --password=rootpass
 sudo service mysql restart
 
-# Create database for form responses (WebExampleBox)
+# Create response1, response2
 mysql -uroot -p'rootpass' -e "DROP DATABASE IF EXISTS formresponses; 
 	CREATE DATABASE formresponses; 
 	USE formresponses; 
-	CREATE TABLE response (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
-		firstname VARCHAR(20), lastname VARCHAR(20), 
-		email VARCHAR(50), submitdate DATETIME);"
+	CREATE TABLE response1 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+		hostname VARCHAR(30));
+	CREATE TABLE response2 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		hostname VARCHAR(30));"
 sudo service mysql restart
 
 echo cd / >> /home/vagrant/.bashrc
-echo "Hello World from DBBox!"
