@@ -27,4 +27,4 @@ mysql -uroot -p'rootpass' -e "DROP DATABASE IF EXISTS formresponses;
 		hostname VARCHAR(30));"
 sudo service mysql restart
 
-echo cd / >> /home/vagrant/.bashrc
+//echo cd / >> /home/vagrant/.bashrc
