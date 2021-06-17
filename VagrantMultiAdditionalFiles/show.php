@@ -9,7 +9,7 @@ try{
 	$db = new PDO($dsn, $username, $password);
 	$result=FALSE;
 
-    $query = "SELECT * FROM response";
+    $query = "SELECT * FROM response1";
 
     $stmt = $db->query($query);
     
