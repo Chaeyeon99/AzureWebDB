@@ -9,12 +9,6 @@
 <h3>Name Form</h3>
 <p>This form will send the following data to the database server.</p>
 
-<?php if(isset($_GET['success']) && $_GET['success']==false): ?>
-	<p class="error">ERROR! Please try again.</p>
-<?php elseif(isset($_GET['success']) && $_GET['success']==true): ?>
-	<p class="success">Your data has been successfully submitted to the database server.</p>
-<?php endif; ?>
-
 <form method="POST" action="/process.php">
 <label>Name:</label>
 <input type="text" name="hostname">
