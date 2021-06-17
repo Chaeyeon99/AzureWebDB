@@ -3,7 +3,7 @@
 
 $username = 'root';
 $password = 'rootpass';
-$dsn = 'mysql:host=192.168.3.6;dbname=formresponses';
+$dsn = 'mysql:host=10.0.3.4;dbname=formresponses';
 
 try{
 	$db = new PDO($dsn, $username, $password);
@@ -18,16 +18,12 @@ try{
     
     echo "<table border='1'>
     <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>email</th>
+    <th>Name</th>
     </tr>";
 
     foreach($rows as $row) {
         echo "<tr>";
-        echo "<td>".$row['firstname']."</td>";
-        echo "<td>".$row['lastname']."</td>";
-        echo "<td>".$row['email']."</td>";
+        echo "<td>".$row['hostname']."</td>";
         echo "</tr>";
 
         //printf("{$row['firstname']} {$row['secondname']} {$row['email']}\n");
